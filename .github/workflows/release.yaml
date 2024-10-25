@@ -42,7 +42,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            txnlab/reti
+            algorandfoundation/reti
           tags: |
             type=ref,event=branch
             type=ref,event=pr
