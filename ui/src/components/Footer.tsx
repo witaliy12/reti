@@ -4,7 +4,7 @@ import { JSX } from 'react/jsx-runtime'
 const navigation = [
   {
     name: 'GitHub',
-    href: 'https://github.com/TxnLab/reti',
+    href: 'https://github.com/algorandfoundation/reti',
     icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -55,7 +55,7 @@ export function Footer() {
           <p className="text-center text-sm leading-5 text-stone-600 dark:text-stone-400">
             Réti Pooling v{__APP_VERSION__} <span className="mx-1 opacity-50">|</span>{' '}
             <a
-              href="https://github.com/TxnLab/reti"
+              href="https://github.com/algorandfoundation/reti"
               className="link hover:text-foreground"
               target="_blank"
               rel="noopener noreferrer"

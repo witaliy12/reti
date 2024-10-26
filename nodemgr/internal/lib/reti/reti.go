@@ -13,8 +13,8 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/client/v2/algod"
 	"github.com/algorand/go-algorand-sdk/v2/types"
 
-	"github.com/TxnLab/reti/internal/lib/algo"
-	"github.com/TxnLab/reti/internal/lib/misc"
+	"github.com/algorandfoundation/reti/internal/lib/algo"
+	"github.com/algorandfoundation/reti/internal/lib/misc"
 )
 
 type Reti struct {

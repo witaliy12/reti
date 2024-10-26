@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/TxnLab/reti.git"
+    "url": "https://github.com/algorandfoundation/reti.git"
   },
   "workspaces": [
     "contracts",

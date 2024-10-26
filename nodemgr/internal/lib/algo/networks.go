@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/TxnLab/reti/internal/lib/misc"
+	"github.com/algorandfoundation/reti/internal/lib/misc"
 )
 
 type NetworkConfig struct {

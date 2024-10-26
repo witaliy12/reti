@@ -16,7 +16,7 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/client/v2/common"
 	"github.com/algorand/go-algorand-sdk/v2/client/v2/common/models"
 
-	"github.com/TxnLab/reti/internal/lib/misc"
+	"github.com/algorandfoundation/reti/internal/lib/misc"
 )
 
 // DefaultValidRoundRange - max valid round range to have transactions be valid for (and to check for confirmation)

@@ -16,9 +16,9 @@ import (
 	"github.com/manifoldco/promptui"
 	"github.com/urfave/cli/v3"
 
-	"github.com/TxnLab/reti/internal/lib/algo"
-	"github.com/TxnLab/reti/internal/lib/misc"
-	"github.com/TxnLab/reti/internal/lib/reti"
+	"github.com/algorandfoundation/reti/internal/lib/algo"
+	"github.com/algorandfoundation/reti/internal/lib/misc"
+	"github.com/algorandfoundation/reti/internal/lib/reti"
 )
 
 func GetValidatorCmdOpts() *cli.Command {

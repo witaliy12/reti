@@ -20,9 +20,9 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/ssgreg/repeat"
 
-	"github.com/TxnLab/reti/internal/lib/algo"
-	"github.com/TxnLab/reti/internal/lib/misc"
-	"github.com/TxnLab/reti/internal/lib/reti"
+	"github.com/algorandfoundation/reti/internal/lib/algo"
+	"github.com/algorandfoundation/reti/internal/lib/misc"
+	"github.com/algorandfoundation/reti/internal/lib/reti"
 )
 
 const (

@@ -13,9 +13,9 @@ import (
 	"github.com/antihax/optional"
 	"github.com/mailgun/holster/v4/syncutil"
 
-	"github.com/TxnLab/reti/internal/lib/misc"
-	"github.com/TxnLab/reti/internal/lib/nfdapi/swagger"
-	"github.com/TxnLab/reti/internal/lib/reti"
+	"github.com/algorandfoundation/reti/internal/lib/misc"
+	"github.com/algorandfoundation/reti/internal/lib/nfdapi/swagger"
+	"github.com/algorandfoundation/reti/internal/lib/reti"
 )
 
 func (d *Daemon) checkForEvictions(ctx context.Context) error {

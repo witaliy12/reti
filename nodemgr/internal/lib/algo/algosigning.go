@@ -14,7 +14,7 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/transaction"
 	"github.com/algorand/go-algorand-sdk/v2/types"
 
-	"github.com/TxnLab/reti/internal/lib/misc"
+	"github.com/algorandfoundation/reti/internal/lib/misc"
 )
 
 type TxnSigner interface {

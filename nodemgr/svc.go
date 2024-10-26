@@ -10,7 +10,7 @@ import (
 
 	"github.com/urfave/cli/v3"
 
-	"github.com/TxnLab/reti/internal/lib/misc"
+	"github.com/algorandfoundation/reti/internal/lib/misc"
 )
 
 func GetDaemonCmdOpts() *cli.Command {
