@@ -20,7 +20,7 @@ This section provides instructions for running the protocol and UI in a local Al
 - **Clone the repository**
 
 	```bash
-	git clone https://github.com/TxnLab/reti.git
+	git clone https://github.com/algorandfoundation/reti.git
 	```
 
 - **Navigate to the `reti` directory**

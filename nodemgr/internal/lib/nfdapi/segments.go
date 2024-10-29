@@ -9,7 +9,7 @@ import (
 	"github.com/antihax/optional"
 	"github.com/ssgreg/repeat"
 
-	"github.com/TxnLab/reti/internal/lib/nfdapi/swagger"
+	"github.com/algorandfoundation/reti/internal/lib/nfdapi/swagger"
 )
 
 func GetAllSegmentsOfRoot(ctx context.Context, api *swagger.APIClient, parentAppID uint64, view string) ([]*swagger.NfdRecord, error) {

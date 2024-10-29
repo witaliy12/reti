@@ -9,7 +9,7 @@ import (
 	"github.com/algorand/go-algorand-sdk/v2/types"
 	"github.com/urfave/cli/v3"
 
-	"github.com/TxnLab/reti/internal/lib/algo"
+	"github.com/algorandfoundation/reti/internal/lib/algo"
 )
 
 func GetKeyCmdOpts() *cli.Command {
