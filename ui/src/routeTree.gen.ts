@@ -19,21 +19,25 @@ import { Route as ValidatorsValidatorIdImport } from './routes/validators_.$vali
 // Create/Update Routes
 
 const ValidatorsRoute = ValidatorsImport.update({
+  id: '/validators',
   path: '/validators',
   getParentRoute: () => rootRoute,
 } as any)
 
 const AddRoute = AddImport.update({
+  id: '/add',
   path: '/add',
   getParentRoute: () => rootRoute,
 } as any)
 
 const IndexRoute = IndexImport.update({
+  id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
 
 const ValidatorsValidatorIdRoute = ValidatorsValidatorIdImport.update({
+  id: '/validators_/$validatorId',
   path: '/validators/$validatorId',
   getParentRoute: () => rootRoute,
 } as any)
@@ -63,8 +67,8 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ValidatorsImport
       parentRoute: typeof rootRoute
     }
-    '/validators/$validatorId': {
-      id: '/validators/$validatorId'
+    '/validators_/$validatorId': {
+      id: '/validators_/$validatorId'
       path: '/validators/$validatorId'
       fullPath: '/validators/$validatorId'
       preLoaderRoute: typeof ValidatorsValidatorIdImport
@@ -94,7 +98,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/add': typeof AddRoute
   '/validators': typeof ValidatorsRoute
-  '/validators/$validatorId': typeof ValidatorsValidatorIdRoute
+  '/validators_/$validatorId': typeof ValidatorsValidatorIdRoute
 }
 
 export interface FileRouteTypes {
@@ -102,7 +106,7 @@ export interface FileRouteTypes {
   fullPaths: '/' | '/add' | '/validators' | '/validators/$validatorId'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/add' | '/validators' | '/validators/$validatorId'
-  id: '__root__' | '/' | '/add' | '/validators' | '/validators/$validatorId'
+  id: '__root__' | '/' | '/add' | '/validators' | '/validators_/$validatorId'
   fileRoutesById: FileRoutesById
 }
 
@@ -135,7 +139,7 @@ export const routeTree = rootRoute
         "/",
         "/add",
         "/validators",
-        "/validators/$validatorId"
+        "/validators_/$validatorId"
       ]
     },
     "/": {
@@ -147,7 +151,7 @@ export const routeTree = rootRoute
     "/validators": {
       "filePath": "validators.tsx"
     },
-    "/validators/$validatorId": {
+    "/validators_/$validatorId": {
       "filePath": "validators_.$validatorId.tsx"
     }
   }

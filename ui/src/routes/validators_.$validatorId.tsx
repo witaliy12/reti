@@ -9,7 +9,7 @@ import { PageMain } from '@/components/PageMain'
 import { ValidatorDetails } from '@/components/ValidatorDetails'
 import { DetailsHeader } from '@/components/ValidatorDetails/DetailsHeader'
 
-export const Route = createFileRoute('/validators/$validatorId')({
+export const Route = createFileRoute('/validators_/$validatorId')({
   beforeLoad: () => {
     return {
       validatorQueryOptions,
