@@ -1,6 +1,3 @@
-import { useQuery, useSuspenseQuery } from '@tanstack/react-query'
-import { ErrorComponent, createFileRoute } from '@tanstack/react-router'
-import { useWallet } from '@txnlab/use-wallet-react'
 import { ValidatorNotFoundError } from '@/api/contracts'
 import { constraintsQueryOptions, stakesQueryOptions, validatorQueryOptions } from '@/api/queries'
 import { Loading } from '@/components/Loading'
@@ -8,8 +5,11 @@ import { Meta } from '@/components/Meta'
 import { PageMain } from '@/components/PageMain'
 import { ValidatorDetails } from '@/components/ValidatorDetails'
 import { DetailsHeader } from '@/components/ValidatorDetails/DetailsHeader'
+import { useQuery, useSuspenseQuery } from '@tanstack/react-query'
+import { ErrorComponent, createFileRoute } from '@tanstack/react-router'
+import { useWallet } from '@txnlab/use-wallet-react'
 
-export const Route = createFileRoute('/validators/$validatorId')({
+export const Route = createFileRoute('/validators_/$validatorId')({
   beforeLoad: () => {
     return {
       validatorQueryOptions,
