@@ -103,6 +103,10 @@ describe('reti', () => {
         const composer = validatorMasterClient
             .newGroup()
             .initStakingContract({ args: { approvalProgramSize: stakingApprovalProgram.length } })
+        // simple sanity check for checking on contract sizes
+        consoleLogger.info(
+            `registry size:${result.compiledApproval?.compiledBase64ToBytes.length}, pool size:${stakingApprovalProgram.length}`,
+        )
 
         // load the StakingPool contract into box storage of the validator
         // call loadStakingContractData - chunking the data from approvalCompiled 2000 bytes at a time

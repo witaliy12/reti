@@ -34,7 +34,7 @@ func initApp() *RetiApp {
 		logger = slog.New(misc.NewMinimalHandler(os.Stdout,
 			misc.MinimalHandlerOptions{SlogOpts: slog.HandlerOptions{Level: logLevel, AddSource: true}}))
 	} else {
-		// not on console - output as json, but change json key names to be more compatibl w/ what google logging
+		// not on console - output as json, but change json key names to be more compatible w/ what google logging
 		// expects
 		opts := &slog.HandlerOptions{
 			AddSource: true,
