@@ -237,7 +237,7 @@ func (d *Daemon) updatePoolVersions(ctx context.Context) {
 	}
 	versString = fmt.Sprintf("%s : %s", versString, getVersionInfo())
 
-	for _, poolAppId := range App.retiClient.Info().LocalPools {
+	for poolId, poolAppId := range App.retiClient.Info().LocalPools {
 		algodVer, err := App.retiClient.GetAlgodVer(poolAppId)
 		if err != nil && !errors.Is(err, algo.ErrStateKeyNotFound) {
 			misc.Errorf(d.logger, "unable to fetch algod version from staking pool app id:%d, err:%v", poolAppId, err)
@@ -250,6 +250,7 @@ func (d *Daemon) updatePoolVersions(ctx context.Context) {
 				misc.Errorf(d.logger, "unable to update algod version in staking pool app id:%d, err:%v", poolAppId, err)
 				return
 			}
+			misc.Infof(d.logger, "new algod version detected. Updated to:%s in pool:%d", versString, poolId)
 		}
 	}
 }
@@ -273,7 +274,7 @@ func (d *Daemon) setAverageBlockTime(ctx context.Context) error {
 	d.Lock()
 	d.avgBlockTime = blockTime
 	d.Unlock()
-	misc.Infof(d.logger, "average block time set to:%v", d.AverageBlockTime())
+	misc.Debugf(d.logger, "average block time set to:%v", d.AverageBlockTime())
 	return nil
 }
 
