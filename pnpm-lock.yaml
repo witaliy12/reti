@@ -11,8 +11,8 @@ importers:
   contracts:
     dependencies:
       '@algorandfoundation/algokit-utils':
-        specifier: 7.0.0-beta.21
-        version: 7.0.0-beta.21(algosdk@2.9.0)
+        specifier: 7.0.0-beta.22
+        version: 7.0.0-beta.22(algosdk@2.9.0)
       algosdk:
         specifier: 2.9.0
         version: 2.9.0
@@ -63,8 +63,8 @@ importers:
   contracts/bootstrap:
     dependencies:
       '@algorandfoundation/algokit-utils':
-        specifier: 7.0.0-beta.21
-        version: 7.0.0-beta.21(algosdk@2.9.0)
+        specifier: 7.0.0-beta.22
+        version: 7.0.0-beta.22(algosdk@2.9.0)
       algosdk:
         specifier: 2.9.0
         version: 2.9.0
@@ -94,8 +94,8 @@ importers:
   ui:
     dependencies:
       '@algorandfoundation/algokit-utils':
-        specifier: 7.0.0-beta.21
-        version: 7.0.0-beta.21(algosdk@2.9.0)
+        specifier: 7.0.0-beta.22
+        version: 7.0.0-beta.22(algosdk@2.9.0)
       '@blockshake/defly-connect':
         specifier: 1.1.6
         version: 1.1.6(algosdk@2.9.0)
@@ -351,8 +351,8 @@ packages:
     engines: {node: '>=18.0'}
     hasBin: true
 
-  '@algorandfoundation/algokit-utils@7.0.0-beta.21':
-    resolution: {integrity: sha512-ESPrHoMyvK3fK3nbCj5f4cQVhPWzdZ+DxEZHciZbq504+kBSP8yqAe4lYNnlQHYRdg17e8KoXX6pAAX5V5W7jA==}
+  '@algorandfoundation/algokit-utils@7.0.0-beta.22':
+    resolution: {integrity: sha512-TneoGK2Sn1wIOGaco1uq42OsCP2svyM6qarYtw/Owr3QKJlBbCGJmaDUVTW/WLWhhO+xBQJi2+aZHysVkZYUdg==}
     engines: {node: '>=18.0'}
     peerDependencies:
       algosdk: '>=2.9.0 <3.0'
@@ -5131,14 +5131,14 @@ snapshots:
 
   '@algorandfoundation/algokit-client-generator@4.0.0-beta.7':
     dependencies:
-      '@algorandfoundation/algokit-utils': 7.0.0-beta.21(algosdk@2.9.0)
+      '@algorandfoundation/algokit-utils': 7.0.0-beta.22(algosdk@2.9.0)
       algosdk: 2.9.0
       chalk: 4.1.2
       change-case: 5.4.4
       commander: 11.1.0
       jsonschema: 1.4.1
 
-  '@algorandfoundation/algokit-utils@7.0.0-beta.21(algosdk@2.9.0)':
+  '@algorandfoundation/algokit-utils@7.0.0-beta.22(algosdk@2.9.0)':
     dependencies:
       algosdk: 2.9.0
       buffer: 6.0.3
