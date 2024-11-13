@@ -105,8 +105,8 @@
     "playwright:test": "playwright test",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
-    "prettier": "npx prettier --check .",
-    "prettier:fix": "npx prettier --write .",
+    "prettier": "pnpx prettier --check .",
+    "prettier:fix": "pnpx prettier --write .",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },
