@@ -72,6 +72,11 @@ This section provides instructions for running the protocol and UI in a local Al
 	pnpm run dev:testnet
 	```
 
+## Documentation
+- The documentation is currently available online at https://txnlab.gitbook.io/reti-open-pooling
+- The content is synced with the docs/gitbook branch of this repo inside the ./docs directory.
+  - The changes in that branch should periodically be merged into main but the docs/gitbook branch is the source of truth for the public docs site currently hosted at: https://txnlab.gitbook.io/reti-open-pooling
+
 ## Additional Resources
 
 - **TEALScript Contracts**: Explore the smart contracts that power the protocol. [Read more](./contracts/README.md)
