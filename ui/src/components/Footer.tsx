@@ -30,6 +30,22 @@ const navigation = [
   },
 ]
 
+export function FooterExtraItem() {
+  return (
+    <>
+      <span className="mx-1 opacity-50">|</span>{' '}
+      <a
+        href={import.meta.env.VITE_FOOTER_EXTRA_ITEM_HREF}
+        className="link hover:text-foreground"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {import.meta.env.VITE_FOOTER_EXTRA_ITEM}
+      </a>
+    </>
+  )
+}
+
 export function Footer() {
   return (
     <footer className="bg-background" aria-labelledby="footer-heading">
@@ -62,6 +78,7 @@ export function Footer() {
             >
               TxnLab/reti
             </a>
+            {import.meta.env.VITE_FOOTER_EXTRA_ITEM && FooterExtraItem()}
           </p>
         </div>
       </div>
