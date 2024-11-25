@@ -11,15 +11,15 @@ importers:
   contracts:
     dependencies:
       '@algorandfoundation/algokit-utils':
-        specifier: 7.0.0-beta.22
-        version: 7.0.0-beta.22(algosdk@2.9.0)
+        specifier: 7.0.0
+        version: 7.0.0(algosdk@2.9.0)
       algosdk:
         specifier: 2.9.0
         version: 2.9.0
     devDependencies:
       '@algorandfoundation/algokit-client-generator':
-        specifier: 4.0.0-beta.7
-        version: 4.0.0-beta.7
+        specifier: 4.0.0
+        version: 4.0.0(@algorandfoundation/algokit-utils@7.0.0(algosdk@2.9.0))(algosdk@2.9.0)
       '@algorandfoundation/tealscript':
         specifier: 0.105.5
         version: 0.105.5
@@ -63,8 +63,8 @@ importers:
   contracts/bootstrap:
     dependencies:
       '@algorandfoundation/algokit-utils':
-        specifier: 7.0.0-beta.22
-        version: 7.0.0-beta.22(algosdk@2.9.0)
+        specifier: 7.0.0
+        version: 7.0.0(algosdk@2.9.0)
       algosdk:
         specifier: 2.9.0
         version: 2.9.0
@@ -94,8 +94,8 @@ importers:
   ui:
     dependencies:
       '@algorandfoundation/algokit-utils':
-        specifier: 7.0.0-beta.22
-        version: 7.0.0-beta.22(algosdk@2.9.0)
+        specifier: 7.0.0
+        version: 7.0.0(algosdk@2.9.0)
       '@blockshake/defly-connect':
         specifier: 1.1.6
         version: 1.1.6(algosdk@2.9.0)
@@ -346,14 +346,17 @@ packages:
   '@adobe/css-tools@4.4.0':
     resolution: {integrity: sha512-Ff9+ksdQQB3rMncgqDK78uLznstjyfIf2Arnh22pW8kBpLs6rpKDwgnZT46hin5Hl1WzazzK64DOrhSwYpS7bQ==}
 
-  '@algorandfoundation/algokit-client-generator@4.0.0-beta.7':
-    resolution: {integrity: sha512-BlEAIdHhBwxWR1crfL7kJkGDCK5NCG1ZKlNFUk88gmG6IxUkeVXa23ltKm/ZAm95k4sc3jzjbXnoBzrYuNgN+Q==}
+  '@algorandfoundation/algokit-client-generator@4.0.0':
+    resolution: {integrity: sha512-dRNtpYXko6cTfQ09D4STiFouVNtWPLAyttCzYMOd2C58ELLOHXBWGLfFCQyLOz+4uWwjFzSOOhgP49SuR7okuw==}
     engines: {node: '>=18.0'}
     hasBin: true
+    peerDependencies:
+      '@algorandfoundation/algokit-utils': ^7.0.0 || ^8.0.0
+      algosdk: ^2.9.0 || ^3.0.0
 
-  '@algorandfoundation/algokit-utils@7.0.0-beta.22':
-    resolution: {integrity: sha512-TneoGK2Sn1wIOGaco1uq42OsCP2svyM6qarYtw/Owr3QKJlBbCGJmaDUVTW/WLWhhO+xBQJi2+aZHysVkZYUdg==}
-    engines: {node: '>=18.0'}
+  '@algorandfoundation/algokit-utils@7.0.0':
+    resolution: {integrity: sha512-L+8ykFgQVEs802yozldp+QFwW5z0sFXxSeHFYztZIVAACwVK4C/z5DnIF/AA+g8L98sv3VPkOvjjvPSya5szZQ==}
+    engines: {node: '>=20.0'}
     peerDependencies:
       algosdk: '>=2.9.0 <3.0'
 
@@ -5129,16 +5132,16 @@ snapshots:
 
   '@adobe/css-tools@4.4.0': {}
 
-  '@algorandfoundation/algokit-client-generator@4.0.0-beta.7':
+  '@algorandfoundation/algokit-client-generator@4.0.0(@algorandfoundation/algokit-utils@7.0.0(algosdk@2.9.0))(algosdk@2.9.0)':
     dependencies:
-      '@algorandfoundation/algokit-utils': 7.0.0-beta.22(algosdk@2.9.0)
+      '@algorandfoundation/algokit-utils': 7.0.0(algosdk@2.9.0)
       algosdk: 2.9.0
       chalk: 4.1.2
       change-case: 5.4.4
       commander: 11.1.0
       jsonschema: 1.4.1
 
-  '@algorandfoundation/algokit-utils@7.0.0-beta.22(algosdk@2.9.0)':
+  '@algorandfoundation/algokit-utils@7.0.0(algosdk@2.9.0)':
     dependencies:
       algosdk: 2.9.0
       buffer: 6.0.3
