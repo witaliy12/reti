@@ -95,12 +95,6 @@ func getDefaults(network string) NetworkConfig {
 		cfg.NFDAPIUrl = "https://api.testnet.nf.domains"
 		cfg.NodeURL = "http://localhost:4001"
 		cfg.NodeToken = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-	//-----
-	// VOI
-	//-----
-	case "voitestnet":
-		cfg.NFDAPIUrl = "https://api.nf.domains"
-		cfg.NodeURL = "https://testnet-api.voi.nodely.io"
 	}
 	return cfg
 }

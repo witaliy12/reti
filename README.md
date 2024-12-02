@@ -35,26 +35,26 @@ This section provides instructions for running the protocol and UI in a local Al
 	pnpm install
 	```
 
-- **Start the local network**
+- **Start the local (fnet compatible) test network**
 
 	```bash
-	algokit localnet start
+	cd contracts; pnpm run localnet
 	```
 
 - **Bootstrap the validator**
 	
 	This command bootstraps a new master validator and funds two new test accounts. It also sets environment variables for LocalNet that will be used by the front-end.
 	```bash
-	pnpm run bootstrap
+	cd contracts/boostrap; pnpm run bootstrap
 	```
 
 - **Launch the UI**
 
 	```bash
-	pnpm run dev
+	cd ui; pnpm run dev:localnet
 	```
 
-## TestNet Development
+## FNet Development
 
 - **Navigate to the `ui` directory**
 
@@ -62,14 +62,14 @@ This section provides instructions for running the protocol and UI in a local Al
 	cd ui
 	```
 
-- **Create a `.env.testnet` file**
+- **Create a `.env.fnet` file**
 
-	Copy the TestNet variables from the [`.env.template`](./ui/.env.template) file into a new `.env.testnet` file. Check back often to make sure you're using the latest master validator app ID, set to `VITE_RETI_APP_ID`.
+	Copy the fnet variables from the [`.env.template`](./ui/.env.template) file into a new `.env.fnet` file. Check back often to make sure you're using the latest master validator app ID, set to `VITE_RETI_APP_ID`.
 
 - **Launch the UI**
 
 	```bash
-	pnpm run dev:testnet
+	pnpm run dev:fnet
 	```
 
 ## Documentation
