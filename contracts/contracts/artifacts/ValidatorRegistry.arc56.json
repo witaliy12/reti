@@ -29496,10 +29496,10 @@
   "compilerInfo": {
     "compiler": "algod",
     "compilerVersion": {
-      "major": 3,
-      "minor": 27,
-      "patch": 237217,
-      "commitHash": "0bc3d7e4"
+      "major": 4,
+      "minor": 0,
+      "patch": 1,
+      "commitHash": "63d271cf"
     }
   }
 }
