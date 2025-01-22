@@ -288,7 +288,7 @@ export function ValidatorTable({
       header: ({ column }) => <DataTableColumnHeader column={column} title="APY" />,
       cell: ({ row }) => {
         if (!row.original.apy) return <span className="text-muted-foreground">--</span>
-        return <span>{formatAmount(row.original.apy, { precision: 3 })}%</span>
+        return <span>{formatAmount(row.original.apy * 100, { precision: 3 })}%</span>
       },
     },
     {
