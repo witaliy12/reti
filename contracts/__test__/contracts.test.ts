@@ -3265,7 +3265,9 @@ describe('reti', () => {
         const stakeAmount = 10000n.algo()
 
         function wait(ms: number): Promise<void> {
-            return new Promise((resolve) => setTimeout(resolve, ms))
+            return new Promise((resolve) => {
+                setTimeout(resolve, ms)
+            })
         }
 
         // add validator and 1 pool for subsequent stake tests

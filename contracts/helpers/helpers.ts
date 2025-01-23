@@ -370,6 +370,7 @@ function dumpLogs(logs: Uint8Array[]) {
         .map((uint8array) => new TextDecoder().decode(uint8array))
         .join('\n')
         .split('\n')
+        // eslint-disable-next-line no-control-regex
         .filter((line) => /^[\x00-\x7F]*$/.test(line))
 
     consoleLogger.info(asciiOnlyLogs.join('\n'))
