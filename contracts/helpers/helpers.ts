@@ -272,7 +272,7 @@ export async function addStake(
 
         const results = await validatorClient
             .newGroup()
-            .gas({ args: [], staticFee: AlgoAmount.MicroAlgos(0) })
+            .gas({ args: [], staticFee: AlgoAmount.MicroAlgos(0), validityWindow: 200 })
             .addStake({
                 args: {
                     // --
@@ -284,6 +284,7 @@ export async function addStake(
                 },
                 staticFee: fees,
                 sender: staker.addr,
+                validityWindow: 200,
             })
             .send({ populateAppCallResources: true, suppressLog: true })
 
@@ -364,13 +365,24 @@ export async function claimTokens(stakeClient: StakingPoolClient, staker: Accoun
     return itxnfees.microAlgos
 }
 
+function dumpLogs(logs: Uint8Array[]) {
+    const asciiOnlyLogs = logs
+        .map((uint8array) => new TextDecoder().decode(uint8array))
+        .join('\n')
+        .split('\n')
+        // eslint-disable-next-line no-control-regex
+        .filter((line) => /^[\x00-\x7F]*$/.test(line))
+
+    consoleLogger.info(asciiOnlyLogs.join('\n'))
+}
+
 export async function epochBalanceUpdate(stakeClient: StakingPoolClient) {
     let fees = AlgoAmount.MicroAlgos(240_000)
     const simulateResults = await stakeClient
         .newGroup()
         .gas({ args: [], note: '1', staticFee: AlgoAmount.MicroAlgos(0) })
         .gas({ args: [], note: '2', staticFee: AlgoAmount.MicroAlgos(0) })
-        .epochBalanceUpdate({ args: {}, staticFee: fees })
+        .epochBalanceUpdate({ args: {}, staticFee: fees, validityWindow: 100 })
         .simulate({ allowUnnamedResources: true, allowMoreLogging: true })
 
     fees = AlgoAmount.MicroAlgos(
@@ -378,11 +390,16 @@ export async function epochBalanceUpdate(stakeClient: StakingPoolClient) {
     )
     consoleLogger.info(`epoch update fees of:${fees.toString()}`)
 
+    const { logs } = simulateResults.simulateResponse.txnGroups[0].txnResults[2].txnResult
+    if (logs !== undefined) {
+        dumpLogs(logs)
+    }
+
     await stakeClient
         .newGroup()
         .gas({ args: [], note: '1', staticFee: AlgoAmount.MicroAlgos(0) })
         .gas({ args: [], note: '2', staticFee: AlgoAmount.MicroAlgos(0) })
-        .epochBalanceUpdate({ args: {}, staticFee: fees })
+        .epochBalanceUpdate({ args: {}, staticFee: fees, validityWindow: 100 })
         .send({ populateAppCallResources: true, suppressLog: true })
     return fees
 }
@@ -457,6 +474,7 @@ export async function incrementRoundNumberBy(context: AlgorandTestAutomationCont
             receiver: context.testAccount.addr,
             amount: AlgoAmount.MicroAlgo(0),
             note: randomUUID(),
+            suppressLog: true,
         })
     }
 

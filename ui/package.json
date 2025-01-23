@@ -1,6 +1,6 @@
 {
   "name": "reti-ui",
-  "version": "0.12.2",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -65,7 +65,7 @@
     "@tremor/react": "3.18.3",
     "@txnlab/use-wallet-react": "4.0.0-beta.4",
     "@walletconnect/modal-sign-html": "2.7.0",
-    "algosdk": "3.0.0",
+    "algosdk": "3.1.0",
     "axios": "1.7.7",
     "axios-cache-interceptor": "1.6.0",
     "big.js": "6.2.2",

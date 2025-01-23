@@ -75,7 +75,7 @@ func getDefaults(network string) NetworkConfig {
 	cfg := NetworkConfig{}
 	switch network {
 	case "mainnet":
-		cfg.RetiAppID = 0 // TODO
+		cfg.RetiAppID = 2714516089
 		cfg.NFDAPIUrl = "https://api.nf.domains"
 		cfg.NodeURL = "https://mainnet-api.algonode.cloud"
 	case "testnet":

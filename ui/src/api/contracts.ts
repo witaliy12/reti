@@ -77,7 +77,7 @@ async function processPool(pool: LocalPoolInfo): Promise<PoolData> {
   poolData.lastPayout = stakingPoolGS.lastPayout
 
   const ewma = stakingPoolGS.weightedMovingAverage
-  poolData.apy = ewma ? Number(ewma) / 10000 : undefined
+  poolData.apy = ewma ? (Number(ewma) / 10000) * 100 : undefined
 
   return poolData
 }
@@ -1138,7 +1138,7 @@ export async function fetchPoolApy(poolAppId: bigint): Promise<number> {
     if (!ewma) {
       throw new Error(`Error fetching EWMA for pool ${poolAppId}`)
     }
-    const poolApy = Number(ewma) / 10000
+    const poolApy = (Number(ewma) / 10000) * 100
 
     return poolApy
   } catch (error) {
