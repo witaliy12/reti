@@ -642,7 +642,10 @@ export async function fetchStakedPoolsForAccount(staker: string): Promise<Valida
 }
 
 export async function callGetStakerInfo(staker: string, stakingPoolClient: StakingPoolClient) {
-  return stakingPoolClient.send.getStakerInfo({ args: { staker } })
+  return stakingPoolClient.getStakerInfo({
+    args: { staker },
+    extraFee: AlgoAmount.MicroAlgos(3000),
+  })
 }
 
 export async function fetchStakerPoolData(
@@ -659,9 +662,7 @@ export async function fetchStakerPoolData(
       lastPayoutRound = BigInt(stakingPoolGS.lastPayout.value)
     }
 
-    const result = await callGetStakerInfo(staker, stakingPoolClient)
-
-    const stakedInfo = result.return!
+    const stakedInfo = await callGetStakerInfo(staker, stakingPoolClient)!
 
     return {
       ...stakedInfo,
