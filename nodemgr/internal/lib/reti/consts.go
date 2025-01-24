@@ -24,6 +24,7 @@ const (
 	StakePoolAlgodVer      = "algodVer"
 	StakePoolEWMA          = "ewma"
 	StakePoolStakeAccum    = "stakeAccumulator"
+	StakePoolRoundsPerDay  = "roundsPerDay"
 
 	// Gating types
 	GatingTypeNone                  = 0
