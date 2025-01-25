@@ -66,7 +66,7 @@ import {
 import { dayjs } from '@/utils/dayjs'
 import { sendRewardTokensToPool, simulateEpoch } from '@/utils/development'
 import { ellipseAddressJsx } from '@/utils/ellipseAddress'
-import { formatAmount, formatAssetAmount } from '@/utils/format'
+import { formatAssetAmount } from '@/utils/format'
 import { globalFilterFn, sunsetFilter } from '@/utils/table'
 import { cn } from '@/utils/ui'
 import { Constraints } from '@/contracts/ValidatorRegistryClient'
@@ -282,15 +282,15 @@ export function ValidatorTable({
         )
       },
     },
-    {
-      id: 'apy',
-      accessorFn: (row) => row.apy,
-      header: ({ column }) => <DataTableColumnHeader column={column} title="APY" />,
-      cell: ({ row }) => {
-        if (!row.original.apy) return <span className="text-muted-foreground">--</span>
-        return <span>{formatAmount(row.original.apy, { precision: 3 })}%</span>
-      },
-    },
+    // {
+    //   id: 'apy',
+    //   accessorFn: (row) => row.apy,
+    //   header: ({ column }) => <DataTableColumnHeader column={column} title="APY" />,
+    //   cell: ({ row }) => {
+    //     if (!row.original.apy) return <span className="text-muted-foreground">--</span>
+    //     return <span>{formatAmount(row.original.apy, { precision: 3 })}%</span>
+    //   },
+    // },
     {
       id: 'reward',
       accessorFn: (row) => row.rewardsBalance,
