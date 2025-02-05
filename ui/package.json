@@ -1,6 +1,6 @@
 {
   "name": "reti-ui",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -41,6 +41,7 @@
     "@blockshake/defly-connect": "1.2.1",
     "@hookform/resolvers": "3.9.0",
     "@perawallet/connect": "1.4.1",
+    "@radix-ui/react-alert-dialog": "^1.1.5",
     "@radix-ui/react-avatar": "1.1.1",
     "@radix-ui/react-checkbox": "1.1.2",
     "@radix-ui/react-collapsible": "1.1.1",
@@ -74,6 +75,7 @@
     "copy-to-clipboard": "3.3.3",
     "date-fns": "4.1.0",
     "dayjs": "1.11.13",
+    "is-ipfs": "^8.0.4",
     "lucide-react": "0.451.0",
     "lute-connect": "1.4.1",
     "next-themes": "0.3.0",

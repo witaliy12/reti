@@ -19,7 +19,7 @@ import {
 import { mbrQueryOptions } from '@/api/queries'
 import { AlgoDisplayAmount } from '@/components/AlgoDisplayAmount'
 import { Loading } from '@/components/Loading'
-import { NfdThumbnail } from '@/components/NfdThumbnail'
+import { NfdDisplay } from '@/components/NfdDisplay'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import {
@@ -331,7 +331,7 @@ export function AddStakeModal({
       // Invalidate other queries to update UI
       queryClient.invalidateQueries({ queryKey: ['stakes', { staker: activeAddress }] })
       queryClient.invalidateQueries({ queryKey: ['staked-info'] })
-      queryClient.invalidateQueries({ queryKey: ['pools-info'] })
+      queryClient.invalidateQueries({ queryKey: ['validator-pools', String(validator.id)] })
       router.invalidate()
     } catch (error) {
       if (error instanceof InsufficientBalanceError) {
@@ -408,7 +408,7 @@ export function AddStakeModal({
           <>
             <strong className="font-medium text-muted-foreground">Asset creator</strong>{' '}
             <div>
-              <NfdThumbnail nameOrId={entryGatingAssets[0]} link />
+              <NfdDisplay nameOrId={entryGatingAssets[0]} link />
             </div>
           </>
         )
@@ -417,7 +417,7 @@ export function AddStakeModal({
           <>
             <strong className="font-medium text-muted-foreground">Segment of</strong>{' '}
             <div className="flex">
-              <NfdThumbnail nameOrId={entryGatingAssets[0]} link />
+              <NfdDisplay nameOrId={entryGatingAssets[0]} link />
             </div>
           </>
         )
@@ -443,6 +443,14 @@ export function AddStakeModal({
     if (isLoading) {
       return (
         <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="text-left">
+              Add Stake to Validator {Number(validator.id)}
+            </DialogTitle>
+            <DialogDescription className="text-left">
+              Loading account information...
+            </DialogDescription>
+          </DialogHeader>
           <div className="flex items-center justify-center my-8">
             <Loading size="lg" className="opacity-50" />
           </div>
@@ -454,7 +462,7 @@ export function AddStakeModal({
       return (
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="text-left">Error</DialogTitle>
+            <DialogTitle className="text-left">Account Error</DialogTitle>
             <DialogDescription className="text-left">
               {accountInfoQuery.error.message || 'Failed to fetch account information'}
             </DialogDescription>
@@ -467,7 +475,7 @@ export function AddStakeModal({
       return (
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="text-left">Error</DialogTitle>
+            <DialogTitle className="text-left">Gating Asset Error</DialogTitle>
             <DialogDescription className="text-left">
               {heldGatingAssetQuery.error.message || 'Failed to fetch gating assets'}
             </DialogDescription>
@@ -512,7 +520,7 @@ export function AddStakeModal({
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-left">
-            Add Stake to Validator {Number(validator?.id)}
+            Add Stake to Validator {Number(validator.id)}
           </DialogTitle>
           <DialogDescription className="text-left">
             This will add ALGO stake to{' '}
